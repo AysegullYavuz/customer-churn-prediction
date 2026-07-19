@@ -1,105 +1,41 @@
-# Customer Churn Prediction
+# End-to-End Enterprise Customer Churn Analysis & Prediction
 
-End-to-end machine learning project for predicting customer churn using Logistic Regression and XGBoost, with business-driven threshold tuning and feature importance analysis.
+This project is an end-to-end computer engineering portfolio project developed to analyze customer churn for a telecommunications company. It encompasses database-level data cleansing, interactive business intelligence dashboard design, and machine learning pipeline implementation to predict future customer attrition.
 
----
-
-## 📊 Project Overview
-
-Customer churn prediction is critical for subscription-based businesses.  
-This project aims to identify customers who are likely to leave and provide actionable insights for retention strategies.
-
-The project includes:
-
-- Data preprocessing
-- Handling class imbalance
-- Logistic Regression (with threshold tuning)
-- XGBoost model
-- ROC-AUC comparison
-- Confusion matrix analysis
-- Feature importance interpretation
-- Feature importance visualization
+## 🚀 Project Architecture & Core Competencies
+The project is built upon 3 primary engineering layers:
+1. **Data Engineering & SQL:** Ingesting raw data into SQL Server, optimizing data types, handling missing/corrupted values, and building dynamic, analysis-ready SQL Views.
+2. **Business Intelligence (BI) & Analytics:** Transforming cleansed data into interactive, filter-driven executive dashboards using Power BI and Tableau to support strategic decision-making.
+3. **Data Science & Machine Learning:** Performing feature engineering, handling class imbalance, and training high-performance predictive models using Python (`pandas`, `numpy`, `scikit-learn`, `xgboost`).
 
 ---
 
-## 📁 Dataset
-
-Telco Customer Churn Dataset  
-Contains 7,000+ customers with 21 features including:
-
-- Demographics
-- Account information
-- Services subscribed
-- Billing details
-- Contract type
-- Payment method
-
-Target variable:
-- `Churn` (Yes / No)
+## 📊 1. Database Layer (SQL Server)
+The raw dataset was ingested into a relational database and processed using the scripts located in the `sql/` directory:
+* Fixed improperly formatted data types (e.g., converting `TotalCharges` to appropriate numeric formats).
+* Resolved logical inconsistencies and deployed optimized dynamic analytics views (`v_CleanedChurnData`) for seamless BI integration.
 
 ---
 
-## ⚙️ Models Used
+## 📉 2. Business Intelligence & Executive Dashboards (Power BI & Tableau)
+To enable stakeholders to extract actionable strategic insights, the data was modeled across two major BI platforms:
 
-### 1️⃣ Logistic Regression
-- Class imbalance handled using `class_weight="balanced"`
-- Business-driven threshold tuning (0.4)
-- ROC-AUC: **0.83**
-- High recall for churn detection (0.87)
+### 🔹 Power BI Dashboard
+* Modeled dynamic churn distributions categorized by contract types, internet service providers, and billing methods.
+* The source file is available under the `dashboards/` directory.
 
-### 2️⃣ XGBoost
-- Imbalance handled with `scale_pos_weight`
-- ROC-AUC: **0.82**
-- More balanced overall performance
+### 🔹 Tableau Public Dashboard
+* A live, interactive executive dashboard deployed on the web with optimized cross-filtering capabilities.
+* **Live Project Link:** [Explore the Interactive Dashboard on Tableau Public]([https://public.tableau.com/app/profile/ay.eg.l.yavuz/viz/Enterprise_Customer_Churn_Tableau/Dashboard1#1])
 
----
-
-## 📈 Model Performance (Logistic Regression - Threshold 0.4)
-
-- Recall (Churn): **0.87**
-- Precision (Churn): 0.45
-- ROC-AUC: 0.83
-
-The model prioritizes identifying churn customers (high recall), which is critical in retention strategies.
+*Dashboard Preview:*
+![Tableau Dashboard](dashboards/<img width="830" height="776" alt="tableau_screenshot" src="https://github.com/user-attachments/assets/74f2cdd8-be78-49a5-85ec-8ac236f8d9b3" />
+tableau_screenshot.png) *(You can upload your screenshot here)*
 
 ---
 
-## 🔍 Key Business Insights
-
-Feature importance analysis revealed:
-
-- Customers with short-term contracts are more likely to churn.
-- Fiber optic internet users show higher churn probability.
-- Customers paying via electronic check are at higher risk.
-- Long-tenure customers are significantly less likely to churn.
-
-### Business Recommendation:
-Encourage long-term contracts and automatic payment methods to reduce churn.
-
----
-
-## 📊 Feature Importance Visualizations
-
-### Logistic Regression
-![Logistic Feature Importance](customer_churn_prediction/logistic_feature_importance.png)
-
-### XGBoost
-![XGBoost Feature Importance](customer_churn_prediction/xgboost_feature_importance.png)
-
----
-
-## 🛠 Technologies Used
-
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- XGBoost
-- Matplotlib
-
----
-
-## 🚀 How to Run
-
-```bash
-python churn_model.py
+## 🤖 3. Machine Learning Model (Python)
+A robust machine learning pipeline was constructed in Python to proactively detect customers who are at high risk of churning:
+* **Stack:** pandas, numpy, scikit-learn, xgboost
+* **Feature Engineering:** Implemented categorical encoding, missing data imputation, and feature scaling.
+* **Modeling:** Trained advanced classification algorithms and optimized model performance utilizing evaluation metrics specific to highly imbalanced target variables.
