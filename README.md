@@ -28,8 +28,7 @@ To enable stakeholders to extract actionable strategic insights, the data was mo
 * A live, interactive executive dashboard deployed on the web with optimized cross-filtering capabilities.
 * **Live Project Link:** [Explore the Interactive Dashboard on Tableau Public]([https://public.tableau.com/app/profile/ay.eg.l.yavuz/viz/Enterprise_Customer_Churn_Tableau/Dashboard1#1])
 
-(dashboards/<img width="830" height="776" alt="tableau_screenshot" src="https://github.com/user-attachments/assets/74f2cdd8-be78-49a5-85ec-8ac236f8d9b3" />
-tableau_screenshot.png)
+<img width="830" height="776" alt="tableau_screenshot" src="https://github.com/user-attachments/assets/74f2cdd8-be78-49a5-85ec-8ac236f8d9b3" />
 
 ---
 
